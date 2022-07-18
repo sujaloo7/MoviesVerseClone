@@ -1,14 +1,30 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
 import { auth, db } from '../firebase';
 import {
+
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  sendPasswordResetEmail
 } from 'firebase/auth';
-import {setDoc,doc} from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 
 const AuthContext = createContext();
+export function forgotpassword(email) {
+  console.log("email")
+  return sendPasswordResetEmail(auth, email, {
+    url: 'http://localhost:3000/login'
+  })
+
+
+}
+
 
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState({});
@@ -16,7 +32,7 @@ export function AuthContextProvider({ children }) {
   function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password);
     setDoc(doc(db, 'users', email), {
-        savedShows: []
+      savedShows: []
     })
   }
 

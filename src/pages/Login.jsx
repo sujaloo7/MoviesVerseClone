@@ -42,7 +42,7 @@ const Login = () => {
             <div className=''>
 
             </div>
-            <div className="container-fluid outer-div">
+            <div className="container-fluid outer-div mt-4">
                 <div className=" ">
 
                     <div className="row">
@@ -68,7 +68,7 @@ const Login = () => {
                                         <input className='mr-2 bg-warning' type='checkbox' />&nbsp;
                                         Remember me
                                     </p>
-                                    <p className='ms-auto'>Need Help?</p>
+                                    <Link to="/forgotpassword" className='mt-3 ms-auto text-decoration-none text-warning' style={{ fontSize: "12px" }}>Forgot Password ?</Link>
                                 </div>
                                 <p className='py-3 text-light'>
                                     <span className='text-gray-600'>New to Watch With Nicky
