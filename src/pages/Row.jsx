@@ -49,7 +49,7 @@ const Row = ({ title, fetchURL }) => {
                                     <div class="card-img"><img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item.title} /></div>
                                     <div class="card-title text-light"> {item.title}</div>
                                     <div class="card-content"> <p>
-                                        {truncateString(item?.overview, 100)}
+                                        {truncateString(item?.overview, 150)}
 
                                     </p> </div>
                                     <div class="card-link d-flex"><a href=""> View More</a>
